@@ -3,6 +3,7 @@ package com.jobforandroid.lis_calcult;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -17,28 +18,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     final int MENU_RESET_ID = 1;
     final int MENU_QUIT_ID = 2;
     
-    EditText etNum1;
-    EditText etNum2;
-    
-    Button btnAdd;
-    Button btnSub;
-    Button btnMult;
-    Button btnDiv;
-
-    Button btn1;
-    Button btn2;
-    Button btn3;
-    Button btn4;
-    Button btn5;
-    Button btn6;
-    Button btn7;
-    Button btn8;
-    Button btn9;
-    Button btn0;
-
-    Button btnPoint;
-    Button btnExactly;
-
+    EditText etNum1, etNum2;
+    Button btnAdd, btnSub, btnMult, btnDiv;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9,btn0;
+    Button btnPoint, btnExactly;
     TextView tvResult;
     
     String oper = " ";
@@ -55,6 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSub = (Button) findViewById(R.id.btnSub);
         btnMult = (Button) findViewById(R.id.btnMult);
         btnDiv = (Button) findViewById(R.id.btnDiv);
+        btnPoint = (Button) findViewById(R.id.btnPoint);
+        btnExactly = (Button) findViewById(R.id.btnExactly);
 
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
@@ -67,11 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn9 = (Button) findViewById(R.id.btn9);
         btn0 = (Button) findViewById(R.id.btn0);
 
-        btnPoint = (Button) findViewById(R.id.btnPoint);
-        btnExactly = (Button) findViewById(R.id.btnExactly);
-
         tvResult = (TextView) findViewById(R.id.tvResult);
-
 
         btnAdd.setOnClickListener(this);
         btnSub.setOnClickListener(this);
@@ -117,9 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
-
         tvResult.setText(num1 + " " + oper + " " + num2 + " = " + result);
-
     }
 
     //Создание меню
