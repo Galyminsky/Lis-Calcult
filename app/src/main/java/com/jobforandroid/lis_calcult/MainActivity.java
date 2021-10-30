@@ -24,7 +24,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnSub;
     Button btnMult;
     Button btnDiv;
-    
+
+    Button btn1;
+    Button btn2;
+    Button btn3;
+    Button btn4;
+    Button btn5;
+    Button btn6;
+    Button btn7;
+    Button btn8;
+    Button btn9;
+    Button btn0;
+
+    Button btnPoint;
+    Button btnExactly;
+
     TextView tvResult;
     
     String oper = " ";
@@ -41,6 +55,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSub = (Button) findViewById(R.id.btnSub);
         btnMult = (Button) findViewById(R.id.btnMult);
         btnDiv = (Button) findViewById(R.id.btnDiv);
+
+        btn1 = (Button) findViewById(R.id.btn1);
+        btn2 = (Button) findViewById(R.id.btn2);
+        btn3 = (Button) findViewById(R.id.btn3);
+        btn4 = (Button) findViewById(R.id.btn4);
+        btn5 = (Button) findViewById(R.id.btn5);
+        btn6 = (Button) findViewById(R.id.btn6);
+        btn7 = (Button) findViewById(R.id.btn7);
+        btn8 = (Button) findViewById(R.id.btn8);
+        btn9 = (Button) findViewById(R.id.btn9);
+        btn0 = (Button) findViewById(R.id.btn0);
+
+        btnPoint = (Button) findViewById(R.id.btnPoint);
+        btnExactly = (Button) findViewById(R.id.btnExactly);
 
         tvResult = (TextView) findViewById(R.id.tvResult);
 
