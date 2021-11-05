@@ -18,6 +18,8 @@ public class MainActivity extends AppCompatActivity  {
     TextView txt;
     int buffer;
     char op;
+    
+    String expression = "";
 
 
     @Override
@@ -27,40 +29,51 @@ public class MainActivity extends AppCompatActivity  {
 
         Button ans = findViewById(R.id. equal);
         ans.setOnClickListener(view -> {
+            int val = 0;
+            try {
+                val = Integer.parseInt(txt.getText().toString());
+            } catch (NumberFormatException e) {}
+            
             switch (op) {
                 case '+':
-                    buffer += Integer.parseInt( txt.getText().toString());
-                    txt.setText(String.valueOf(buffer));
+                    buffer += val;
                     break;
                 case '-':
-                    buffer -= Integer.parseInt( txt.getText().toString());
-                    txt.setText(String.valueOf(buffer));
+                    buffer -= val;
                     break;
                 case '*':
-                    buffer *= Integer.parseInt( txt.getText().toString());
-                    txt.setText(String.valueOf(buffer));
+                    buffer *= val;
                     break;
                 case '/':
-                    buffer/= Integer.parseInt( txt.getText().toString());
-                    txt.setText(String.valueOf(buffer));
+                    try {
+                        buffer /= val;
+                    } catch (ArithmeticException e) {} //деление на 0
                     break;
             }
+            txt.setText(String.valueOf(buffer));
         });
 
         txt = (TextView) findViewById(R.id.txt);
 
     }
     public void ops (View view) {
-        buffer = Integer.parseInt(txt.getText().toString());
+        try {
+            buffer = Integer.parseInt(expression);
+        } catch (NumberFormatException e) { }
+        
         Button b = (Button) view;
         op = b.getText().charAt(0);
-        txt.setText("");
+        setExpression("");
     }
 
     public void appendText (View view) {
         Button b = (Button) view;
-        txt.setText(txt.getText().toString() + b.getText().toString());
+        setExpression(expression + b.getText().toString());
     }
-
+    
+    private void setExpression(String s) {
+        expression = s;
+        txt.setText(expression);
+    }
 
 }
